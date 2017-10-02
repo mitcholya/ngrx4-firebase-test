@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: none;
+  overflow: auto;
+}
+
+.toolbar-name {
+  /* float: right; */
+  position: absolute;
+  right: 0;
+  /* padding-bottom: 20px; */
+  top: 15px;
+  right: 15px;
+}
+
+.toolbar-ref {
+  text-decoration: none;
+  color: white;
+}

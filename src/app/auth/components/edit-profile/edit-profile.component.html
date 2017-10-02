@@ -1,0 +1,44 @@
+<!-- <p>
+  edit-profile works!
+</p> -->
+
+<md-card>
+  <md-card-header> Мой профиль </md-card-header>
+  <br>
+  <md-card-content *ngIf="user$ | async as user">
+    <p>ФИО: {{ user.displayName}}</p>
+    <p>Электронная почта: {{ user.email }}</p>
+    <p>Город: {{user.city }}</p>
+    <p>Телефон: {{user.phone}}</p>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-title>Профиль</md-card-title>
+  <md-card-content>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <p>
+        <md-input-container>
+          <input type="text" mdInput placeholder="ФИО" formControlName="displayName">
+        </md-input-container>
+      </p>
+      <p>
+        <md-input-container>
+          <input type="text" mdInput placeholder="Город" formControlName="city">
+        </md-input-container>
+      </p>
+      <p>
+        <md-input-container>
+          <input type="text" mdInput placeholder="Номер телефона" formControlName="phone">
+        </md-input-container>
+      </p>
+      <p *ngIf="errorMessage" class="loginError">
+        {{ errorMessage }}
+      </p>          
+    
+      <p class="loginButtons">
+        <button type="submit" md-button>Сохранить</button>
+      </p>
+    </form>
+  </md-card-content>
+</md-card>
